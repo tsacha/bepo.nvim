@@ -55,8 +55,8 @@ local function mapping_easy_access()
   map_all("g;", "g,")
   map_all("’", "'")
   map_all("';", "’")
-  map_all("\195\169", "w")
-  map_all("\195\137", "W")
+  map_all("m", "w")
+  map_all("M", "W")
   map_text_object("a\195\169", "aw")
   map_text_object("a\195\137", "aW")
   map_text_object("i\195\169", "iw")
@@ -77,28 +77,6 @@ local function mapping_window()
   map_normal("w\195\169", "<C-w>t")
   return map_normal("w\195\137", "<C-w>T")
 end
-local function mapping_digits()
-  map_all("\"","1")
-  map_all("1","\"")
-  map_all("«","2")
-  map_all("2","<")
-  map_all("»","3")
-  map_all("3",">")
-  map_all("(","4")
-  map_all("4","(")
-  map_all(")","5")
-  map_all("5",")")
-  map_all("@","6")
-  map_all("6","@")
-  map_all("+","7")
-  map_all("7","+")
-  map_all("-","8")
-  map_all("8","-")
-  map_all("/","9")
-  map_all("9","/")
-  map_all("*","0")
-  return map_all("0","*")
-end
 
 local function setup()
   if (vim.g.loaded_bepo_nvim == nil) then
@@ -112,4 +90,5 @@ local function setup()
     return nil
   end
 end
-return {setup = setup, movement = mapping_movement, tabs = mapping_tabs, easy_access = mapping_easy_access, window = mapping_window, digits = mapping_digits}
+
+return {setup = setup, movement = mapping_movement, tabs = mapping_tabs, easy_access = mapping_easy_access, window = mapping_window}
