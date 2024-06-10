@@ -37,6 +37,8 @@ local function mapping_movement()
   map_all("j", "r")
   map_all("J", "R")
   map_all("k", "s")
+  map_all("~", "$")
+  map_all("$", "~")
   return map_all("K", "S")
 end
 local function mapping_tabs()
